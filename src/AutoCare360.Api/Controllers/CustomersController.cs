@@ -31,8 +31,18 @@ public sealed class CustomersController : ControllerBase
     }
 
     [HttpGet("{id:guid}")]
-    public IActionResult GetById(Guid id)
-        => Ok(new { id, message = "Customer lookup placeholder for Phase 1." });
+    [ProducesResponseType(typeof(CustomerDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetById(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        var customer = await _customerService.GetByIdAsync(id, cancellationToken);
+
+        return customer is null
+            ? NotFound()
+            : Ok(customer);
+    }
 }
 
 public sealed record CreateCustomerRequest(
