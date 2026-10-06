@@ -23,6 +23,7 @@ public sealed class CustomerService : ICustomerService
         var customer = new Customer(firstName, lastName, email, phoneNumber);
 
         await _customerRepository.AddAsync(customer, cancellationToken);
+        await _customerRepository.SaveChangesAsync(cancellationToken);
 
         return new CustomerDto(
             customer.Id,
