@@ -1,3 +1,4 @@
+using AutoCare360.Domain.Customers;
 using AutoCare360.Domain.Vehicles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
