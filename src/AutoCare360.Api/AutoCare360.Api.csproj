@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoCare360.Application\AutoCare360.Application.csproj" />
+    <ProjectReference Include="..\AutoCare360.Infrastructure\AutoCare360.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
