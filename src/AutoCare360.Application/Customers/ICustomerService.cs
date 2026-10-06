@@ -8,4 +8,8 @@ public interface ICustomerService
         string email,
         string phoneNumber,
         CancellationToken cancellationToken = default);
+
+    Task<CustomerDto?> GetByIdAsync(
+        Guid id,
+        CancellationToken cancellationToken = default);
 }
