@@ -27,10 +27,10 @@ public sealed class VehicleConfiguration : IEntityTypeConfiguration<Vehicle>
         builder.Property(x => x.Year)
             .IsRequired();
 
-        builder.Property(x => x.CreatedAt)
+        builder.Property(x => x.CreatedAtUtc)
             .IsRequired();
 
-        builder.Property(x => x.UpdatedAt)
+        builder.Property(x => x.UpdatedAtUtc)
             .IsRequired();
 
         builder.HasIndex(x => x.RegistrationNumber)
