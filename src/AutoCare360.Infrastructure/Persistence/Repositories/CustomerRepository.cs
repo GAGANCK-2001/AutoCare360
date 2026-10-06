@@ -28,4 +28,9 @@ public sealed class CustomerRepository : ICustomerRepository
             .AsNoTracking()
             .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
+
+    public Task SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        return _dbContext.SaveChangesAsync(cancellationToken);
+    }
 }
