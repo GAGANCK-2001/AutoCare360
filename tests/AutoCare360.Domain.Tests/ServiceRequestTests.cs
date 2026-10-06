@@ -1,3 +1,4 @@
+using Xunit;
 using AutoCare360.Domain.Service;
 
 namespace AutoCare360.Domain.Tests;
